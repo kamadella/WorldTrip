@@ -1,0 +1,28 @@
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width:600px;
+  padding: 10px;
+}
+
+img{
+  border-radius: 10px;
+}
+
+.box{
+  background-color: 		#F5F5F5;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.btn{
+  margin: 10px;
+}
+

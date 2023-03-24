@@ -1,0 +1,56 @@
+{
+  "trips": [
+    {
+      "id": 2,
+      "name": "Tajlandia",
+      "date_start": "2023-03-09T15:12",
+      "date_end": "2023-03-12T15:12",
+      "description": "dv erv",
+      "pictures": [
+        "https://i.content4travel.com/cms/img/u/kraj/1/tajlandia_0.jpg?version=210811-06"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Egipt",
+      "date_start": "2023-01-11T16:39",
+      "date_end": "2023-01-27T16:39",
+      "description": "super",
+      "pictures": [
+        "https://i.wpimg.pl/1200x/d.wpimg.pl/740810678-462696064/egipt.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "grecja",
+      "date_start": "2023-03-28T16:46",
+      "date_end": "2023-04-01T16:46",
+      "description": "vddsvdvvdsvds",
+      "pictures": [
+        "https://www.nekera.pl/media/filer_public_thumbnails/filer_public/92/1f/921f3bff-b0a4-4e4c-8d38-faf8b9a3ec6f/grecja-last-lp.jpg__812.0x456.0_q85_subsampling-2.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Wałbrzycg",
+      "date_start": "2023-03-18T17:57",
+      "date_end": "2023-03-23T17:57",
+      "description": "vnofdnovbo dnboid ",
+      "pictures": [
+        "https://um.walbrzych.pl/sites/default/files/pliki/2016-06-09_plac_magistracki_02.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Egipt",
+      "date_start": "2023-03-09T14:23",
+      "date_end": "2023-03-24T14:23",
+      "description": "sdfcvsdvvfdsv",
+      "pictures": [
+        "https://www.eccoholiday.com/p/wp-content/uploads/2020/03/egipt-1.jpg",
+        "https://images.r.pl/zdjecia/lokalizacje/27/egipt_27_85343_110633_1000x1000.jpg",
+        "https://images.r.pl/zdjecia/lokalizacje/27/egipt_27_85343_110633_1000x1000.jpg"
+      ]
+    }
+  ]
+}

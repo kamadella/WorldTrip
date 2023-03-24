@@ -1,0 +1,23 @@
+<div class="container">
+  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching for a trip">
+</div>
+
+<div class="trips" *ngFor="let trip of trips | filter: searchText">
+  <div class="container">
+    <div class="box ">
+      <div class="pictureBox center">
+        <img class="image" routerLink="/viev/{{trip.id}}" src={{trip.pictures[0]}}>
+      </div>
+      <div class="data ">
+        <div class="name center"> <h2>{{trip.name}} </h2></div>
+        <div class="date center"> {{trip.date_start | date}} - {{trip.date_end | date}}</div>
+      </div>
+      <hr>
+      <div class="buttons center">
+        <button type="button" class="btn btn-primary" routerLink="/viev/{{trip.id}}">More</button>
+        <button type="button" class="btn btn-primary" routerLink="/edit/{{trip.id}}">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="onDelete(trip.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

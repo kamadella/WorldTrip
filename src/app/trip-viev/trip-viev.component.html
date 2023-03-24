@@ -1,0 +1,20 @@
+
+<body>
+  <div class="photo-gallery">
+      <div class="container" *ngFor="let trip of trips">
+          <div class="intro"  *ngIf=" trip.id == tripId">
+              <h2 class="text-center">{{trip.name}} </h2>
+              <p class="text-center"> {{trip.date_start | date }} - {{trip.date_end | date}} </p>
+              <p class="text-center"> {{trip.description}} </p>
+          </div>
+          <div class="row photos" *ngIf=" trip.id == tripId">
+            <div *ngFor="let picture of trip.pictures">
+              <div class="col-sm-6 col-md-4 col-lg-3 item" >
+                <a href={{picture}} data-lightbox="photos"><img class="img-fluid" src={{picture}}></a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+</body>
