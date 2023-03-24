@@ -1,6 +1,6 @@
 <div class="container ">
   <div class="py-5 text-center">
-    <h2>Event</h2>
+    <h2>Edit Trip</h2>
     <hr>
   </div>
 
@@ -11,7 +11,7 @@
         <div class="row g-3">
           <div class="col-sm-12">
             <label for="name" class="form-label">Trip Name</label>
-            <input type="text" formControlName="name" class="form-control" id="name" placeholder="name..." value="" required>
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="name..." value = {{trip.name}} required>
             <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="invalid-feedback">
               wrong name
             </div>
@@ -20,7 +20,7 @@
           <div class="col-6">
             <label for="startDate" class="form-label">Start Date</label>
             <div class="input-group has-validation">
-              <input type="datetime-local" formControlName="startDate" class="form-control" id="startDate" required>
+              <input type="datetime-local" formControlName="startDate" class="form-control" id="startDate" value = {{trip.date_start}}  required>
               <div *ngIf="startDate?.invalid && (startDate?.dirty || startDate?.touched)" class="invalid-feedback">
                wrong date
               </div>
@@ -31,13 +31,13 @@
           <div class="col-6">
             <label for="endDate" class="form-label">End Date</label>
             <div class="input-group has-validation">
-              <input type="datetime-local" formControlName="endDate" class="form-control" id="endDate" required>
+              <input type="datetime-local" formControlName="endDate" class="form-control" id="endDate" value = {{trip.date_end}}  required>
               <div *ngIf="(endDate?.dirty || endDate?.touched)">
                 <div *ngIf="endDate?.invalid" class="invalid-feedback">
                   wrong date
                 </div>
                 <div *ngIf="endDate?.value<startDate?.value" class="invalid-feedback">
-                  wrong date
+                  end date should be greater than start date
                 </div>
               </div>
             </div>
@@ -48,26 +48,32 @@
 
           <div class="col-sm-12">
             <label for="name" class="form-label">Description</label>
-            <textarea type="text" formControlName="description" class="form-control" id="name" placeholder="write..." value="" required></textarea>
+            <textarea type="text" formControlName="description" class="form-control" id="name" placeholder="write..." value= {{trip.description}} required></textarea>
           </div>
 
 
-          <div class="col-sm-12">
-            <label for="picture" class="form-label">Pictures</label>
-            <div class="input-group has-validation">
-              <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+
+
+
+          <div class="col-sm-12" formArrayName="pictures">
+            <hr>
+            <h4>Pictures</h4>
+            <button type="button" class="btn col btn-primary" (click)="addImage()">+ Add another picture</button>
+
+
+            <div *ngFor="let picture of  pictures.controls; let i=index" >
+              <!-- The repeated alias template -->
+              <label for="picture-{{ i }}" class="form-label">#{{i+1}} Picture: </label>
+              <input id="picture-{{ i }}" type="text" [formControlName]="i" class="form-control">
+              <button type="button" class="btn col btn-danger" (click)="removeImage(i)">Delete</button>
             </div>
-              <input type="text" formControlName="pictures" class="form-control" id="name" placeholder="src" value="" required>
           </div>
 
         </div>
 
-
-
-
         <hr class="my-4">
 
-        <button class="btn col btn-success btn-lg" type="submit" >Zapisz</button>
+        <button class="btn col btn-success btn-lg" type="submit" [disabled]="!formModel.valid">Zapisz</button>
         <div class="row">
 
         </div>

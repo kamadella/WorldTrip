@@ -12,9 +12,6 @@ import { Trip } from 'src/trip';
 export class NewTripComponent implements OnInit {
   formModel!: FormGroup;
 
-  images: string[] = [''];
-  newImage: string = '';
-
   constructor(private tripService: TripService, private router: Router) { }
 
   ngOnInit(): void {
@@ -55,7 +52,6 @@ export class NewTripComponent implements OnInit {
 
   removeImage(index :number){
     this.pictures.removeAt(index);
-
   }
 
 
