@@ -27,7 +27,7 @@ export class EditTripComponent implements OnInit {
       endDate: new FormControl(),
       description: new FormControl(),
       pictures: new FormArray([
-        new FormControl(''),
+        new FormControl(),
       ]),
     });
 
@@ -35,7 +35,25 @@ export class EditTripComponent implements OnInit {
       this.trip = trip;
 
 
+        for (let pic of trip.pictures){
+          console.log(pic);
+          this.pictures.push(new FormControl(''));
 
+        }
+
+      console.log(this.formModel.value.pictures);
+
+
+      this.formModel.patchValue({
+        name: trip.name,
+        startDate: trip.date_start,
+        endDate: trip.date_end,
+        description: trip.description,
+        pictures : trip.pictures
+      });
+
+      console.log(this.formModel.value.pictures);
+/*
       this.formModel.setValue({
         name: trip.name,
         startDate: trip.date_start,
@@ -43,10 +61,9 @@ export class EditTripComponent implements OnInit {
         description: trip.description,
         pictures: trip.pictures
       });
-
+*/
     });
 
-    //console.log(this.formModel.value.pictures[0]);
 
   }
 
