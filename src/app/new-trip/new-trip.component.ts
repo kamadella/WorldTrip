@@ -21,7 +21,7 @@ export class NewTripComponent implements OnInit {
       endDate: new FormControl('',[Validators.required]),
       description: new FormControl('',[Validators.required]),
       pictures: new FormArray([
-        new FormControl('')
+        new FormControl(''),
       ]),
     });
   }
@@ -59,6 +59,19 @@ export class NewTripComponent implements OnInit {
     console.log(this.formModel.value.pictures);
 
     console.warn(this.formModel.value);
+
+    const images = this.formModel.value.pictures;
+    console.log(images);
+    let index =0;
+    for(let img of images){
+      console.log(img);
+      if(img === ""){
+        console.log("jestem "  + index);
+        this.pictures.removeAt(index);
+        index--;
+      }
+      index++;
+    }
 
     let trip = new Trip(0, this.formModel.value.name,this.formModel.value.startDate,this.formModel.value.endDate,this.formModel.value.description, this.formModel.value.pictures);
 

@@ -53,15 +53,6 @@ export class EditTripComponent implements OnInit {
       });
 
       console.log(this.formModel.value.pictures);
-/*
-      this.formModel.setValue({
-        name: trip.name,
-        startDate: trip.date_start,
-        endDate: trip.date_end,
-        description: trip.description,
-        pictures: trip.pictures
-      });
-*/
     });
 
 
