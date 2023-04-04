@@ -32,12 +32,13 @@
     },
     {
       "id": 5,
-      "name": "Wałbrzycg",
+      "name": "Wałbrzych",
       "date_start": "2023-03-18T17:57",
       "date_end": "2023-03-23T17:57",
       "description": "vnofdnovbo dnboid ",
       "pictures": [
-        "https://um.walbrzych.pl/sites/default/files/pliki/2016-06-09_plac_magistracki_02.jpg"
+        "https://um.walbrzych.pl/sites/default/files/pliki/2016-06-09_plac_magistracki_02.jpg",
+        ""
       ]
     },
     {
@@ -51,6 +52,16 @@
         "https://images.r.pl/zdjecia/lokalizacje/27/egipt_27_85343_110633_1000x1000.jpg",
         "https://images.r.pl/zdjecia/lokalizacje/27/egipt_27_85343_110633_1000x1000.jpg",
         "https://www.eccoholiday.com/p/wp-content/uploads/2020/03/egipt-1.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Choroszcz",
+      "date_start": "2023-03-10T14:05",
+      "date_end": "2023-03-31T14:05",
+      "description": "ojkoil",
+      "pictures": [
+        "https://podlaskie24.pl/wp-content/uploads/2019/11/podlaskie24.pl-choroszcz-ma-nowy-neonowy-gadzet-img-7647.jpg"
       ]
     }
   ]

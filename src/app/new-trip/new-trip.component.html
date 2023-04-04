@@ -17,6 +17,14 @@
             </div>
           </div>
 
+          <div class="col-sm-12">
+            <label for="address" class="form-label">Trip Localization</label>
+            <input type="text" formControlName="address" class="form-control" id="address" placeholder="address..." value="" required>
+            <div *ngIf="address?.invalid && (address?.dirty || address?.touched)" class="invalid-feedback">
+              wrong localization
+            </div>
+          </div>
+
           <div class="col-6">
             <label for="startDate" class="form-label">Start Date</label>
             <div class="input-group has-validation">

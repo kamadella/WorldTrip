@@ -17,6 +17,7 @@ export class NewTripComponent implements OnInit {
   ngOnInit(): void {
     this.formModel = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      address: new FormControl('', [Validators.required, Validators.minLength(3)]),
       startDate: new FormControl('', [Validators.required]),
       endDate: new FormControl('',[Validators.required]),
       description: new FormControl('',[Validators.required]),
@@ -28,6 +29,10 @@ export class NewTripComponent implements OnInit {
 
   get name(){
     return this.formModel.get('name');
+  }
+
+  get address(){
+    return this.formModel.get('address');
   }
 
   get startDate(){
@@ -73,7 +78,7 @@ export class NewTripComponent implements OnInit {
       index++;
     }
 
-    let trip = new Trip(0, this.formModel.value.name,this.formModel.value.startDate,this.formModel.value.endDate,this.formModel.value.description, this.formModel.value.pictures);
+    let trip = new Trip(0, this.formModel.value.name, this.formModel.value.address, this.formModel.value.startDate,this.formModel.value.endDate,this.formModel.value.description, this.formModel.value.pictures);
 
     if(confirm("Are you sure to add? ")){
         this.tripService.addTrip(trip).subscribe();

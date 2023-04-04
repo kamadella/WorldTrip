@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Trip } from 'src/trip';
+import { Router } from '@angular/router';
 import { TripService } from '../trip.service';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -16,13 +17,14 @@ export class EditTripComponent implements OnInit {
   tripId:number = -1;
   trip: any = {};
 
-  constructor(private tripService: TripService, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private tripService: TripService, private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe( params=> this.tripId = params['id']);
 
     this.formModel = new FormGroup({
       name: new FormControl(),
+      address: new FormControl(),
       startDate: new FormControl(),
       endDate: new FormControl(),
       description: new FormControl(),
@@ -46,6 +48,7 @@ export class EditTripComponent implements OnInit {
 
       this.formModel.patchValue({
         name: trip.name,
+        address: trip.address,
         startDate: trip.date_start,
         endDate: trip.date_end,
         description: trip.description,
@@ -63,6 +66,10 @@ export class EditTripComponent implements OnInit {
 
   get name(){
     return this.formModel.get('name');
+  }
+
+  get address(){
+    return this.formModel.get('address');
   }
 
   get startDate(){
@@ -94,9 +101,24 @@ export class EditTripComponent implements OnInit {
 
   editTrip() {
     console.log(this.tripId);
+
+    const images = this.formModel.value.pictures;
+    console.log(images);
+    let index =0;
+    for(let img of images){
+      console.log(img);
+      if(img === ""){
+        console.log("jestem "  + index);
+        this.pictures.removeAt(index);
+        index--;
+      }
+      index++;
+    }
+
     let trip = {
       id: this.tripId,
       name: this.formModel.value.name,
+      address: this.formModel.value.address,
       date_start: this.formModel.value.startDate,
       date_end: this.formModel.value.endDate,
       description: this.formModel.value.description,
@@ -107,6 +129,7 @@ export class EditTripComponent implements OnInit {
     console.warn(this.formModel.value);
 
     this.tripService.editTrip(trip).subscribe();
+    this.router.navigate(['/list-of-trips']);
   }
 
 }
