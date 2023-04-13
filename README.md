@@ -1,3 +1,10 @@
+# WorldTrip
+apka pozwala na dodawanie, usuwanie, edytowanie oraz wyświetlanie listy wycieczek.
+
+W kolejnych etapach zostanie dodana możliwość wyświetlania wycieczek na mapie jako piny oraz dodawanie na mapę pinów na podstwie lokalizacji wykonania zdjecia
+
+
+
 # Trip
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
